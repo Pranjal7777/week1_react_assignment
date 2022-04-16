@@ -48,47 +48,53 @@ export const HomePage = () => {
 
     return <>
         <h1>Country-City Data</h1>
-        <Link to="/addcountry"> <Button className="button" variant="contained" color="success">
-            Add Country
-        </Button></Link>
-        <Link to="/addcity">
-            <Button className="button" variant="contained" color="success">
-                Add CIty
-            </Button>
+        <div className={Styles.buttonDiv}>
+            <Link to="/addcountry"> <Button className="button" variant="contained" color="secondary">
+                Add Country
+            </Button></Link>
+            <Link to="/addcity">
+                <Button className={Styles.buttonOriginal} variant="contained" color="secondary">
+                    Add CIty
+                </Button>
 
-        </Link>
+            </Link>
+        </div>
 
         <br />
+
         <br />
-        <br />
-        <TableContainer className={Styles.table} component={Paper}>
-            <Table sx={{ minWidth: 700 }} aria-label="customized table">
-                <TableHead>
-                    <TableRow>
-                        <StyledTableCell>No.</StyledTableCell>
-                        <StyledTableCell align="center">Country</StyledTableCell>
-                        <StyledTableCell align="center">City</StyledTableCell>
-                        <StyledTableCell align="center">Population</StyledTableCell>
-                        <StyledTableCell align="center">X</StyledTableCell>
-                        <StyledTableCell align="center">Edit</StyledTableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {city && city.map((city) => (
-                        <StyledTableRow key={city.id}>
-                            <StyledTableCell component="th" scope="row"> {city.id}</StyledTableCell>
+        <div className={Styles.tableCont}>
+            <TableContainer className={Styles.table} component={Paper}>
+                <Table sx={{ minWidth: 700 }} aria-label="customized table">
+                    <TableHead>
+                        <TableRow>
+                            <StyledTableCell>No.</StyledTableCell>
+                            <StyledTableCell align="center">Country</StyledTableCell>
+                            <StyledTableCell align="center">City</StyledTableCell>
+                            <StyledTableCell align="center">Population</StyledTableCell>
+                            <StyledTableCell align="center">X</StyledTableCell>
+                            <StyledTableCell align="center">Edit</StyledTableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {city && city.map((city) => (
+                            <StyledTableRow key={city.id}>
+                                <StyledTableCell component="th" scope="row"> {city.id}</StyledTableCell>
 
 
-                            <StyledTableCell align="center">{city.country_name}</StyledTableCell>
-                            <StyledTableCell align="center">{city.city_name}</StyledTableCell>
-                            <StyledTableCell align="center">{city.population}</StyledTableCell>
-                            <StyledTableCell align="center">{"x"}</StyledTableCell>
-                            <StyledTableCell align="center">{"edit"}</StyledTableCell>
-                        </StyledTableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                                <StyledTableCell align="center">{city.country_name}</StyledTableCell>
+                                <StyledTableCell align="center">{city.city_name}</StyledTableCell>
+                                <StyledTableCell align="center">{city.population}</StyledTableCell>
+                                <StyledTableCell align="center">{"x"}</StyledTableCell>
+                                <StyledTableCell align="center">{"edit"}</StyledTableCell>
+                            </StyledTableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
+        </div>
+
+
 
 
     </>

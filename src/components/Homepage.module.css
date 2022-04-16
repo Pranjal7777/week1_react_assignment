@@ -1,0 +1,15 @@
+.tableCont{
+    border: 7px solid rgb(31, 27, 24);
+    width:70%;
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+};
+
+.buttonDiv{
+    display: flex;
+    justify-content: space-around;
+    border: 10px solid black;
+}
+body{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
